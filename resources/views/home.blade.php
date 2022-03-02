@@ -40,7 +40,7 @@
                         <td>{{ $p->placement_location }}</td>
                         <td>
                             <a href="/home/editdata/{{$p->company_id}}"> Edit</a> |
-                            <a href="#"> Hapus</a>
+                            <a href="/home/delete/{{$p->company_id}}"> Delete</a>
                         </td>
                     </tr>
                     @endforeach

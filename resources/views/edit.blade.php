@@ -12,7 +12,7 @@
             <div class="card">
                 <div class="card-body">
                     @foreach($data_officer as $p)
-                    <form action="/home/edit" method="post">
+                    <form action="/home/edit/{{$p->company_id}}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
                         <label for="exampleInputBorder">Company</label>

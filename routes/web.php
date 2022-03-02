@@ -23,6 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/home/add', [App\Http\Controllers\HomeController::class, 'add'])->name('add')->middleware('auth');
 Route::post('/adddata', [App\Http\Controllers\HomeController::class, 'adddata'])->name('adddata')->middleware('auth');
 Route::get('/home/editdata/{id}', [App\Http\Controllers\HomeController::class, 'editdata'])->name('editdata')->middleware('auth');
-Route::post('/home/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('edit')->middleware('auth');
+Route::post('/home/edit/{id}', [App\Http\Controllers\HomeController::class, 'edit'])->name('edit')->middleware('auth');
+Route::get('/home/delete/{id}', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete')->middleware('auth');
 Auth::routes();
 

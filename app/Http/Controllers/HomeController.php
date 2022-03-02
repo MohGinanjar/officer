@@ -56,7 +56,8 @@ class HomeController extends Controller
     }
 
     public function edit(Request $request){
-        DB::table('data_officer')->where('company_id', $request->id)->update([
+        echo $request;
+        DB::table('data_officer')->where('company_id', $request->company_id)->update([
             'officer_id' =>$request->officer_id,
             'officer_name' =>$request->officer_name,
             'officer_qr' =>$request->officer_qr,
@@ -66,7 +67,14 @@ class HomeController extends Controller
             'birth_place' =>$request->birth_place,
             'placement_location' =>$request->placement_location,
             'pin' =>$request->pin,
+
         ]);
+        return redirect('home');
+    }
+
+    public function delete($id)
+    {
+        DB::table('data_officer')->where('company_id',$id)->delete();
         return redirect('home');
     }
 }
